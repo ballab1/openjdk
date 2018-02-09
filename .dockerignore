@@ -1,0 +1,8 @@
+.git
+.gitattributes
+.gitignore
+.lfsconfig
+README.md
+docker-compose.yml
+bin/*
+vols-rw/*
