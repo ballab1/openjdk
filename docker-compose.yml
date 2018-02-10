@@ -4,8 +4,8 @@ services:
     openjdk:
         build:
             args:
-                CODE_VERSION: base_container:20180207
+                CODE_VERSION: base_container:20180210
             cache_from:
-                - base_container:20180207
+                - base_container:20180210
             context: .
-        image: openjre_8u131.11-r2:20180207 
+        image: openjre_8u131.11-r2:20180210 
