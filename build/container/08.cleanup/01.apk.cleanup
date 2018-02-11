@@ -1,4 +1,1 @@
-#!/bin/bash
-
-apk del .build-deps
-rm -rf /var/cache/apk/*
+../../container_lib/08.cleanup/01.apk.cleanup
