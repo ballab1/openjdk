@@ -13,6 +13,9 @@ COPY build /tmp/
 # build content
 RUN set -o verbose \
     && chmod u+rwx /tmp/container/build.sh \
-    && /tmp/container/build.sh 'OPENJDK-JRE'
+    && /tmp/container/build.sh 'OPENJDK-JDK'
 RUN rm -rf /tmp/*
 
+
+ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+ENV PATH=${PATH}:${JAVA_HOME}/bin
