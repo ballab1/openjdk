@@ -14,6 +14,6 @@ function java_home()
 java_home > /usr/local/bin/docker-java-home
 chmod +x /usr/local/bin/docker-java-home
 
-apk add --no-cache openjdk8-jre="$JAVA_ALPINE_VERSION"
+apk add --no-cache openjdk8
 
 [ "$JAVA_HOME" = "$(docker-java-home)" ]
