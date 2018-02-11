@@ -1,4 +1,4 @@
-version: '3.2'
+version: '3.5'
 
 services:
     openjdk:
@@ -7,5 +7,8 @@ services:
                 CODE_VERSION: base_container:20180210
             cache_from:
                 - base_container:20180210
+                - alpine:3.6                 
             context: .
-        image: openjre_8u131.11-r2:20180210 
+#        depends_on:
+#            - base_container:20180210
+        image: openjdk_8u131.11-r2:20180210 
