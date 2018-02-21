@@ -13,8 +13,8 @@ COPY build /tmp/
 
 # build content
 RUN set -o verbose \
-    && chmod u+rwx /tmp/container/build.sh \
-    && /tmp/container/build.sh 'OPENJDK-JDK'
+    && chmod u+rwx /tmp/build.sh \
+    && /tmp/build.sh 'OPENJDK-JDK'
 RUN rm -rf /tmp/*
 
 
