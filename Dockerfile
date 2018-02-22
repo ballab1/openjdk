@@ -8,6 +8,9 @@ LABEL version=$CONTAINER_VERSION
 # Default to UTF-8 file.encoding
 ENV LANG=C.UTF-8
 
+# set to non zero for the framework to show verbose action scripts
+ARG DEBUG_TRACE=0
+
 # Add configuration and customizations
 COPY build /tmp/
 
