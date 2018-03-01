@@ -19,4 +19,8 @@ if [ "${CBF['os_id']}" = 'alpine' ]; then
     apk add --no-cache openjdk8
 fi
 
-[ "$JAVA_HOME" = "$(docker-java-home)" ]
+if [ "$JAVA_HOME" != "$(docker-java-home)" ]; then
+    echo "java_home:  $(docker-java-home)"
+    echo "JAVA_HOME:  $JAVA_HOME"
+    exit 1
+fi 

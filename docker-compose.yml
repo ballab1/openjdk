@@ -4,6 +4,7 @@ services:
     openjdk:
         build:
             args:
+                CONTAINER_NAME: openjdk_8u131.11-r2
                 CONTAINER_VERSION: 1.0.2
                 DEBUG_TRACE: 0
                 FROM_BASE: base_container:20180217
@@ -12,6 +13,4 @@ services:
                 - alpine:3.6                 
             context: .
             dockerfile: Dockerfile
-        environment:
-            CONTAINER_NAME: openjdk_8u131.11-r2
         image: openjdk_8u131.11-r2:20180217 
