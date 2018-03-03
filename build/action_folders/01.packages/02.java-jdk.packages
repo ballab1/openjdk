@@ -1,6 +1,7 @@
 # build Packages
 
-export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk/jre
+export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+export PATH="${PATH}:${JAVA_HOME}/bin"
 declare JAVA_VERSION=8u131
 declare JAVA_ALPINE_VERSION=8.131.11-r2
 
