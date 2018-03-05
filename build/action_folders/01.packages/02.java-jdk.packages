@@ -3,9 +3,6 @@
 source "/tmp${CBF['crf_env']}/java.properties"
 source "/tmp${CBF['crf_lib']}/java.bashlib"
 
-#java.home > /usr/local/bin/docker-java-home
-#chmod +x /usr/local/bin/docker-java-home
-
 
 if [ "${CBF['os_id']}" = 'alpine' ]; then
     apk add --no-cache openjdk8
