@@ -1,7 +1,0 @@
-#!/bin/bash
-
-# auto-detect the appropriate JAVA_HOME value based on whether the JDK or only the JRE is installed
-function java.home()
-{
-    dirname "$(dirname "$(readlink -f "$(which javac || which java)")" )"
-}
