@@ -1,0 +1,9 @@
+# java Packages
+
+# create property file for runtime
+cat << 'EOF' > ${CBF['crt_env']}/java.properties
+export JAVA_ALPINE_VERSION=8.131.11-r2
+export JAVA_VERSION=8u131
+export JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+export PATH="${PATH}:${JAVA_HOME}/bin"
+EOF
