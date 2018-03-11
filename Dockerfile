@@ -22,5 +22,5 @@ RUN set -o verbose \
 RUN [[ $DEBUG_TRACE != 0 ]] || rm -rf /tmp/* 
 
 
-ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
-ENV PATH=${PATH}:${JAVA_HOME}/bin
+#ENV JAVA_HOME=/usr/lib/jvm/java-1.8-openjdk
+#ENV PATH=${PATH}:${JAVA_HOME}/bin
