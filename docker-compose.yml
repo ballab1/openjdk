@@ -7,10 +7,10 @@ services:
                 CONTAINER_NAME: openjdk_8u131.11-r2
                 CONTAINER_VERSION: 1.0.5
                 DEBUG_TRACE: 0
-                FROM_BASE: base_container:20180311
+                FROM_BASE: base_container:20180314
             cache_from:
-                - base_container:20180311
+                - base_container:20180314
                 - alpine:3.6                 
             context: .
             dockerfile: Dockerfile
-        image: openjdk_8u131.11-r2:20180311
+        image: openjdk_8u131.11-r2:20180314
