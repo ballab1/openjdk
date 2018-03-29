@@ -2,7 +2,9 @@
 
 # install jdk
 if [ "${CBF['os_id']}" = 'alpine' ]; then
-    apk add --no-cache openjdk8
+    declare PKGS='openjdk8'
+    package.checkIfInstalled "$PKGS"
+    apk add --no-cache $PKGS
 fi
 
 # verify it is the correct code
