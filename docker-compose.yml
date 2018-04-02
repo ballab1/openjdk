@@ -4,6 +4,7 @@ services:
     openjdk:
         build:
             args:
+                CBF_VERSION: ${CBF_VERSION:-dev}
                 CONTAINER_NAME: openjdk_8u131.11-r2
                 CONTAINER_VERSION: 1.0.8
                 DEBUG_TRACE: 0
