@@ -1,0 +1,3 @@
+# java Packages
+
+declare -a PKGS=( openjdk8 )
