@@ -9,4 +9,4 @@ declare -a env_jdk=(
     'PATH="${PATH}:${JAVA_HOME}/bin"'
 )
 
-lib.updateRuntimeEnvironment "${env_jdk[*]}" 
+crf.updateRuntimeEnvironment "${env_jdk[*]}" 
