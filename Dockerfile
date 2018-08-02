@@ -26,3 +26,8 @@ RUN set -o verbose \
     && chmod u+rwx /tmp/build.sh \
     && /tmp/build.sh "$CONTAINER_NAME" "$DEBUG_TRACE"
 RUN [ $DEBUG_TRACE != 0 ] || rm -rf /tmp/* \n 
+
+
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+#CMD ["$CONTAINER_NAME"]
+CMD ["openjdk8"]
