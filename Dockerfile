@@ -4,7 +4,7 @@ FROM $FROM_BASE
 # name and version of this docker image
 ARG CONTAINER_NAME=openjdk
 # Specify CBF version to use with our configuration and customizations
-ARG CBF_VERSION="${CBF_VERSION}"
+ARG CBF_VERSION
 
 # include our project files
 COPY build Dockerfile /tmp/
@@ -15,7 +15,7 @@ ENV DEBUG_TRACE=0
 
 
 # java version being bundled in this docker image
-ARG JAVA_VERSION=${JAVA_VERSION:-8.171.11-r0}
+ARG JAVA_VERSION=8.171.11-r0
 LABEL java.version=$JAVA_VERSION
 
 ENV JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-1.8-openjdk}
