@@ -1,11 +1,11 @@
 version: '3.3'
 
 services:
-    openjdk8:
+    openjdk:
         build:
             args:
                 CBF_VERSION: "${CBF_VERSION:-}"
-                CONTAINER_NAME: openjdk8
+                CONTAINER_NAME: openjdk
                 FROM_BASE: ${DOCKER_REGISTRY:-}base_container:${BASE_TAG:-latest}
             cache_from:
                 - ${DOCKER_REGISTRY:-}alpine:3.8
@@ -19,9 +19,8 @@ services:
                 container.git.commit: $CONTAINER_GIT_COMMIT
                 container.git.url: $CONTAINER_GIT_URL
                 container.origin: $CONTAINER_ORIGIN
-                container.original.name: openjdk8
-                container.version: ${CONTAINER_VERSION:-3.0.0}
-        container_name: openjdk8
+                container.original.name: openjdk
+        container_name: openjdk
         environment:
             DEBUG_TRACE: ${DEBUG_TRACE:-0}
-        image: ${DOCKER_REGISTRY:-}openjdk8:${CONTAINER_TAG:-latest}
+        image: ${DOCKER_REGISTRY:-}openjdk/8.171.11-r0:${CONTAINER_TAG:-latest}
