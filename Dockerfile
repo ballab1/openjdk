@@ -18,8 +18,6 @@ ENV DEBUG_TRACE=0
 ARG JAVA_VERSION=8.171.11-r0
 LABEL java.version=$JAVA_VERSION
 
-ENV JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-1.8-openjdk}
-
 
 # build content
 RUN set -o verbose \
