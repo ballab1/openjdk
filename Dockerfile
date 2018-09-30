@@ -1,4 +1,4 @@
-ARG FROM_BASE=${DOCKER_REGISTRY:-}${OS:-}base_container:${BASE_TAG:-latest}
+ARG FROM_BASE=${DOCKER_REGISTRY:-}${CONTAINER_OS:-}base_container:${BASE_TAG:-latest}
 FROM $FROM_BASE
 
 # name and version of this docker image
@@ -17,8 +17,6 @@ ENV DEBUG_TRACE=0
 # java version being bundled in this docker image
 ARG JAVA_VERSION=8.171.11-r0
 LABEL java.version=$JAVA_VERSION
-
-ENV JAVA_HOME=${JAVA_HOME:-/usr/lib/jvm/java-1.8-openjdk}
 
 
 # build content
