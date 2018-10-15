@@ -17,6 +17,8 @@ ENV DEBUG_TRACE=0
 # java version being bundled in this docker image
 ARG JAVA_VERSION=8.171.11-r0
 LABEL java.version=$JAVA_VERSION
+ARG JAVA_EXTENDED
+ARG JAVA_PACKAGE
 
 
 # build content

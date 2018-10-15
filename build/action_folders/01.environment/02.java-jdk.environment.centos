@@ -1,8 +1,10 @@
 #!/bin/bash
 
 declare -a env_jdk=(
+    "JAVA_EXTENDED=${JAVA_EXTENDED:?}"
+    "JAVA_PACKAGE=${JAVA_PACKAGE:?}"
     "JAVA_VERSION=${JAVA_VERSION:?}"
-    'JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-1.8-openjdk}"'
+    'JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-${JAVA_PACKAGE}-${JAVA_EXTENDED}}"'
     'PATH="${PATH}:${JAVA_HOME}/bin"'
 )
 
