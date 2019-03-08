@@ -1,18 +1,33 @@
-ARG CODE_VERSION=base_container:20180207
-FROM $CODE_VERSION
+ARG FROM_BASE=${DOCKER_REGISTRY:-ubuntu-s2:5000/}${CONTAINER_OS:-alpine}/base_container:${BASE_TAG:-latest}
+FROM $FROM_BASE
 
-ENV VERSION=1.0.0
-LABEL version=$VERSION
+# name and version of this docker image
+ARG CONTAINER_NAME=openjdk
+# Specify CBF version to use with our configuration and customizations
+ARG CBF_VERSION
 
-# Default to UTF-8 file.encoding
-ENV LANG=C.UTF-8
+# include our project files
+COPY build Dockerfile /tmp/
 
-# Add configuration and customizations
-COPY build /tmp/
+# set to non zero for the framework to show verbose action scripts
+#    (0:default, 1:trace & do not cleanup; 2:continue after errors)
+ENV DEBUG_TRACE=0
+
+
+# java version being bundled in this docker image
+ARG JAVA_VERSION
+LABEL version.java=$JAVA_VERSION
+ARG JAVA_EXTENDED
+ARG JAVA_PACKAGE
+
 
 # build content
 RUN set -o verbose \
-    && chmod u+rwx /tmp/container/build.sh \
-    && /tmp/container/build.sh 'OPENJDK-JRE'
-RUN rm -rf /tmp/*
+    && chmod u+rwx /tmp/build.sh \
+    && /tmp/build.sh "$CONTAINER_NAME" "$DEBUG_TRACE"
+RUN [ $DEBUG_TRACE != 0 ] || rm -rf /tmp/*
 
+
+ENTRYPOINT [ "docker-entrypoint.sh" ]
+#CMD ["$CONTAINER_NAME"]
+CMD ["openjdk"]

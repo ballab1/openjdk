@@ -1,0 +1,19 @@
+#!/bin/bash
+
+declare -a env_jdk=()
+
+if [ $(dpkg --get-selections | grep i386 | wc -l) -gt 0 ]; then
+    env_jdk=(
+        "JAVA_VERSION=${JAVA_VERSION:?}"
+        'JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-8-openjdk-i386}"'
+        'PATH="${PATH}:${JAVA_HOME}/bin"'
+    )
+else
+    env_jdk=(
+        "JAVA_VERSION=${JAVA_VERSION:?}"
+        'JAVA_HOME="${JAVA_HOME:-/usr/lib/jvm/java-8-openjdk-amd64}"'
+        'PATH="${PATH}:${JAVA_HOME}/bin"'
+    )
+fi
+
+crf.updateRuntimeEnvironment "${env_jdk[@]}" 

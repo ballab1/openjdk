@@ -1,0 +1,3 @@
+[project]
+container_name=openjdk_container
+friendly_name=openjdk
