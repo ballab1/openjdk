@@ -1,3 +1,3 @@
 # java Packages
 
-declare -a PKGS=( openjdk11 )
+declare -a PKGS=( openjdk17 )
