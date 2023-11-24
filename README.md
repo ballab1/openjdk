@@ -1,1 +1,1 @@
-# openjdk
+# openjdk-17
